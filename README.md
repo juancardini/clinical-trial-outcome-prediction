@@ -36,9 +36,6 @@ clinical-trial-outcome-prediction-graph-ml
 │   ├── 06_graph_creation.cypher
 │   ├── 07_graph_metrics.cypher
 │   └── 08_export_graph_metrics.cypher
-│
-├── figures
-├── docs
 └── README.md
 ```
 
