@@ -1,4 +1,4 @@
-// Construcción del grafo de ensayos clínicos de diabetes
+// Development of Diabetes' Clinical Trials Graph
 
 // Constraints
 
