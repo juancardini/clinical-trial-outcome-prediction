@@ -1,5 +1,5 @@
 
-//Proyeccion grafo
+//Graph Projection
 CALL gds.graph.project(
   'fullGraph',
   ['Study','Condition','Country','Intervention','Sponsor','Facility','Design'],
@@ -69,12 +69,12 @@ RETURN communityCount, modularity, nodePropertiesWritten, computeMillis, writeMi
 //Page Rank
 CALL gds.pageRank.write('fullGraph', {
   writeProperty: 'pagerank',
-  maxIterations: 20,        // podés dejar 20
+  maxIterations: 20,        // 
   dampingFactor: 0.85       // standard PageRank
 })
 YIELD nodePropertiesWritten, didConverge, ranIterations, computeMillis, writeMillis
 RETURN nodePropertiesWritten, didConverge, ranIterations, computeMillis, writeMillis;
-//Normalizar
+//Normalize
 MATCH (s:Study)
 WITH max(s.pagerank) AS maxVal
 MATCH (s:Study)
@@ -82,7 +82,7 @@ SET s.pagerank_norm = s.pagerank / maxVal;
 
 
 
-//Normalizar degree
+//Normalize degree
 MATCH (s:Study)
 WITH max(s.degree_total) AS max_degree
 MATCH (s:Study)
